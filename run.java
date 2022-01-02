@@ -23,6 +23,9 @@ public class run {
 		admin.billingsPayment();
 		admin.users[0].displayBilling();
 		admin.users[1].displayBilling();
+		admin.addBilling();
+		admin.users[0].displayBilling();
+		admin.users[1].displayBilling();
 		
 	}
 

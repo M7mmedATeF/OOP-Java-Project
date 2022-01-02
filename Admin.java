@@ -35,5 +35,40 @@ public class Admin {
 			}
 		}
 	}
-	
+
+	public void addBilling() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Users: ");
+		for (int i = 0; i < users.length; i++) {
+			if(users[i] != null) {
+				System.out.println((i+1)+"-  "+users[i].name);
+			}
+		}
+		try {
+			System.out.print("Enter User's Number to add a Billing: ");
+			int num = in.nextInt();
+			System.out.println("---------------------------");
+			
+			System.out.print("Billing's Title: ");
+			String title = in.next();
+			
+			System.out.print("Billing's Price: ");
+			double price = in.nextDouble();
+			
+			System.out.print("Billing's Date: ");
+			String date = in.next();
+			
+			Billing b = new Billing(title,price,date);
+			
+			users[num-1].addBill(b);
+		}catch(NullPointerException ex) {
+			System.out.println("Worng Number");
+		}catch(ArrayIndexOutOfBoundsException ex) {
+			System.out.println("Maximum Billings Reached");
+		}catch(Exception ex) {
+			ex.getMessage();
+		}finally {
+			System.out.println("---------------------------");
+		}
+	}
 }

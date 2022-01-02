@@ -34,6 +34,7 @@ public class User {
 		for (int i = 0; i < this.bill.length; i++) {
 			if(this.bill[i] == null) {
 				this.bill[i] = bill;
+				break;
 			}
 		}
 	}
